@@ -9,10 +9,10 @@ pygame.init()
 # Definimos algunas constantes
 WIDTH, HEIGHT = 800, 600   #TIENE QUE SER LAS DIMENSIONES DE LA IMAGEN
 FPS = 60
-RADIO = 3
+RADIO = 1
 MAX_BRUSHES = 100000
 # Cargamos la imagen de referencia
-reference_img = Image.open("george-mono.webp")
+reference_img = Image.open("vangogh.png")
 reference_array = np.array(reference_img)  # Convertimos la imagen de referencia a un array numpy
 IMG_HEIGHT = reference_array.shape[0]  # Obtiene el alto de la imagen
 IMG_WIDTH = reference_array.shape[1]  # Obtiene el ancho de la imagen
@@ -42,7 +42,7 @@ class Agent:
         return (x, y), color
 
     # Método para generar el agente inicial
-    def generate_initial(self, num_brushes=10):
+    def generate_initial(self, num_brushes=20):
         self.brushes = [self.generate_brush() for _ in range(num_brushes)]
 
     # Método para evaluar el agente
@@ -73,7 +73,7 @@ class Agent:
 
 # Creamos la ventana de visualización
 screen = pygame.display.set_mode((IMG_WIDTH, IMG_HEIGHT))
-pygame.display.set_caption("Pinceladas ")
+pygame.display.set_caption("Pinxeladas ")
 
 # Reloj para controlar la velocidad de fotogramas
 clock = pygame.time.Clock()
